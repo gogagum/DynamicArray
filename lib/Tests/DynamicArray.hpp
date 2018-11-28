@@ -71,8 +71,8 @@ public:
 
     T pop_back() {
         T to_return = buffer_[size_ - 1];
-        size_ --;
-        if (size_ * 4 < buffer_size_) {
+        --size_;
+        if (size_ > 0 && size_ * 4 < buffer_size_) {
             buffer_size_ /= 2;
             T* new_buffer = new T[buffer_size_ / 2];
             for (int i = 0; i < size_; ++i ) {
@@ -81,6 +81,7 @@ public:
             delete [] buffer_;
             buffer_ = new_buffer;
         }
+        return to_return;
     }
 
     void erase (int index) {
