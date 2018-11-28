@@ -78,3 +78,12 @@ TEST(SimpleTests, Clear) {
     test_array.clear();
     EXPECT_EQ(test_array.size(), 0);
 }
+
+TEST (SimpleTests, Erase) {
+    DynamicArray<int> test_array(10);
+    for (int i = 0; i < 10; i++) {
+        test_array[i] = i;
+    }
+    test_array.pop_back();
+    EXPECT_EQ(test_array.size(), 9);
+}
