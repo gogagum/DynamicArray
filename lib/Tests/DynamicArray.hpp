@@ -11,7 +11,7 @@
 template <typename T>
 class DynamicArray {
 public:
-    DynamicArray (size_t size = 0) :  size_(size), buffer_size_(1) {
+    explicit DynamicArray (size_t size = 0) : size_(size), buffer_size_(1) {
         assert(size >= 0);
         while (buffer_size_ < size) {
             buffer_size_ *= 2;
@@ -38,10 +38,10 @@ public:
         }
     }
 
-    DynamicArray (const DynamicArray<T> &otherArray) : size_(otherArray.size()), buffer_size_(otherArray.buffer_size_) {
+    DynamicArray (const DynamicArray<T> &otherArray) : size_(otherArray.size_), buffer_size_(otherArray.buffer_size_) {
         buffer_ = new T[buffer_size_];
         for (int i = 0; i < size_; ++i) {
-            buffer_[i] = otherArray[i];
+            buffer_[i] = otherArray.buffer_[i];
         }
     }
 
@@ -74,8 +74,8 @@ public:
         --size_;
         if (size_ > 0 && size_ * 4 < buffer_size_) {
             buffer_size_ /= 2;
-            T* new_buffer = new T[buffer_size_ / 2];
-            for (int i = 0; i < size_; ++i ) {
+            T* new_buffer = new T[buffer_size_];
+            for (int i = 0; i < size_; ++i) {
                 new_buffer[i] = buffer_[i];
             }
             delete [] buffer_;
@@ -87,7 +87,7 @@ public:
     void erase (int index) {
         assert(index >= 0 && index < size_);
         --size_;
-        if (size_ * 4 < buffer_size_ && buffer_size_ != 1){
+        if (size_ * 4 < buffer_size_ && buffer_size_ != 1) {
             buffer_size_ /= 2;
             T* new_buffer = new T[buffer_size_];
             for (int i = 0; i < index; ++i) {
@@ -98,7 +98,8 @@ public:
             }
             delete [] buffer_;
             buffer_ = new_buffer;
-        } else {
+        }
+        else {
             for (int i = index; i < size_; ++i) {
                 buffer_[i] = buffer_[i + 1];
             }
@@ -126,14 +127,15 @@ private:
     size_t buffer_size_;
 };
 
-template  <typename T>
-bool operator == (DynamicArray<T> d1, DynamicArray<T> d2) {
+template <typename T>
+bool operator == (const DynamicArray<T> &d1, const DynamicArray<T> &d2) {
     if (d1.size() != d2.size()) {
         return false;
     } else {
-        for (int i = 0; i < d1.size(); ++i ) {
-            if (d1[i] != d2[i])
+        for (int i = 0; i < d1.size(); ++i) {
+            if (d1[i] != d2[i]) {
                 return false;
+            }
         }
     }
     return true;
