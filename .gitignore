@@ -1,5 +1,3 @@
 .idea/
-lib/googletest-master
-cmake-build-debug/CMakeFiles
-cmake-build-debug/DynamicArray
-cmake-build-debug/DynamicArray.cbp
+lib/googletest-master/
+cmake-build-debug/
