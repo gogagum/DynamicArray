@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/gogagum/CLionProjects/Lab/DynamicArray/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5405e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5405e.dir/build.make CMakeFiles/cmTC_5405e.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_0629e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0629e.dir/build.make CMakeFiles/cmTC_0629e.dir/build
 make[1]: вход в каталог «/home/gogagum/CLionProjects/Lab/DynamicArray/cmake-build-debug/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_5405e.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_5405e.dir/CheckSymbolExists.c.o   -c /home/gogagum/CLionProjects/Lab/DynamicArray/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_5405e
-/home/gogagum/.local/share/umake/ide/clion/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5405e.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5405e.dir/CheckSymbolExists.c.o  -o cmTC_5405e 
-CMakeFiles/cmTC_5405e.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_0629e.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0629e.dir/CheckSymbolExists.c.o   -c /home/gogagum/CLionProjects/Lab/DynamicArray/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_0629e
+/home/gogagum/.local/share/umake/ide/clion/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0629e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0629e.dir/CheckSymbolExists.c.o  -o cmTC_0629e 
+CMakeFiles/cmTC_0629e.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_5405e.dir/build.make:86: ошибка выполнения рецепта для цели «cmTC_5405e»
-make[1]: *** [cmTC_5405e] Ошибка 1
+CMakeFiles/cmTC_0629e.dir/build.make:86: ошибка выполнения рецепта для цели «cmTC_0629e»
+make[1]: *** [cmTC_0629e] Ошибка 1
 make[1]: выход из каталога «/home/gogagum/CLionProjects/Lab/DynamicArray/cmake-build-debug/CMakeFiles/CMakeTmp»
-Makefile:121: ошибка выполнения рецепта для цели «cmTC_5405e/fast»
-make: *** [cmTC_5405e/fast] Ошибка 2
+Makefile:121: ошибка выполнения рецепта для цели «cmTC_0629e/fast»
+make: *** [cmTC_0629e/fast] Ошибка 2
 
 File /home/gogagum/CLionProjects/Lab/DynamicArray/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
