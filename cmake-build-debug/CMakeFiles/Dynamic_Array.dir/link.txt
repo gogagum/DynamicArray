@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/Dynamic_Array.dir/main.cpp.o CMakeFiles/Dynamic_Array.dir/lib/Tests/test.cpp.o  -o Dynamic_Array lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -pthread 
