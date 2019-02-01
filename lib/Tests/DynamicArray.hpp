@@ -34,7 +34,7 @@ public:
     template <typename Iterator>
     DynamicArray(Iterator it1, Iterator it2) : DynamicArray() {
         for (auto i = it1; i < it2; ++i) {
-            push_back(*i);
+            PushBack(*i);
         }
     }
 
@@ -56,7 +56,7 @@ public:
         return buffer_[index];
     };
 
-    void push_back(T new_element) {
+    void PushBack(T new_element) {
         if (size_ == buffer_size_) {
             auto  new_buffer = new T[2 * buffer_size_];
             for (int i = 0; i < buffer_size_; ++i) {
@@ -70,7 +70,7 @@ public:
         ++size_;
     }
 
-    T pop_back() {
+    T PopBack() {
         T to_return = buffer_[size_ - 1];
         --size_;
         if (size_ > 0 && size_ * 4 < buffer_size_) {
@@ -85,7 +85,7 @@ public:
         return to_return;
     }
 
-    void erase(int index) {
+    void Erase(int index) {
         assert(index >= 0 && index < size_);
         --size_;
         if (size_ * 4 < buffer_size_ && buffer_size_ != 1) {
@@ -106,14 +106,14 @@ public:
         }
     }
 
-    void clear() {
+    void Clear() {
         delete [] buffer_;
         buffer_size_ = 1;
         buffer_ = new T[buffer_size_];
         size_ = 0;
     }
 
-    size_t size() const {
+    size_t Size() const {
         return size_;
     }
 
@@ -129,10 +129,10 @@ private:
 
 template <typename T>
 bool operator == (const DynamicArray<T> &first_array, const DynamicArray<T> &second_array) {
-    if (first_array.size() != second_array.size()) {
+    if (first_array.Size() != second_array.Size()) {
         return false;
     } else {
-        for (int i = 0; i < first_array.size(); ++i) {
+        for (int i = 0; i < first_array.Size(); ++i) {
             if (first_array[i] != second_array[i]) {
                 return false;
             }
