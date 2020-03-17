@@ -7,5 +7,5 @@ include_directories(lib/googletest-master/googletest/include)
 include_directories(lib/googletest-master/googlemock/include)
 
 set(SOURCE_FILES main.cpp lib/Tests/test.cpp lib/Tests/DynamicArray.hpp)
-add_executable(Dynamic_Array ${SOURCE_FILES} lib/Tests/test.cpp)
-target_link_libraries(Dynamic_Array gtest gtest_main)
+add_executable(DynamicArray ${SOURCE_FILES} lib/Tests/test.cpp lib/Tests/DynamicArray.hpp)
+target_link_libraries(DynamicArray gtest gtest_main)
