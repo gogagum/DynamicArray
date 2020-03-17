@@ -42,7 +42,7 @@ TEST(DynamicArrayConstructor, CopyConstructor) {
   for (int i = 0; i < 5; i++) {
     test_array1[i] = i + 1;
   }
-  DynamicArray<int> test_array2 = test_array1;
+  DynamicArray<int> test_array2(test_array1);
   EXPECT_EQ(test_array2.Size(), 5);
   for (int i = 0; i < 5; i++) {
     EXPECT_EQ(test_array2[i], i + 1);
